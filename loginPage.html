@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            color: #fff;
+            width: 30%;
+            text-align: right;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+            background-color: #3498db;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form method="post" action="login.php">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <input type="submit" name="login" value="Login">
+        </form>
+
+        <!-- Registration Form -->
+        <form method="post" action="register.php">
+            <label for="new_username">New Username:</label>
+            <input type="text" id="new_username" name="new_username" required>
+            <br>
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password" required>
+            <br>
+            <input type="submit" name="register" value="Register">
+        </form>
+
+        <!-- Link back to menu -->
+        <div class="header">
+            <a href="menu.php"><button>Back to Menu</button></a>
+        </div>
+
+        <h1></h1>
+
+    </div>
+
+</body>
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <title>Your Title</title>
+</head>
+<body>
+
+<form id="loginForm" method="POST">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+
+  <button type="button" onclick="submitForm()">Login</button>
+</form>
+
+<div id="response"></div>
+
+<script>
+function submitForm() {
+  var username = $('#username').val();
+  var password = $('#password').val();
+
+  // Make an AJAX request to the server
+  $.ajax({
+    type: 'POST',
+    url: 'login.php', // Replace with the actual path to your PHP script
+    data: { username: username, password: password },
+    success: function(response) {
+      // Handle the response from the server
+      $('#response').html(response);
+    }
+  });
+}
+</script>
+
+
+
+</html>
