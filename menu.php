@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <title>Menu</title>
+    <title>Your Website</title>
     <style>
         .cookie-popup {
             display: <?php echo isset($_COOKIE['cookiesAccepted']) ? 'none' : 'block'; ?>;
@@ -131,14 +131,54 @@
 
         <h1>Call Of Duty Wiki</h1>
 
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function(e) {
+                e.preventDefault();
+
+                // Get form data
+                var formData = $(this).serialize();
+
+                // Make an AJAX request
+                $.ajax({
+                    type: 'POST',
+                    url: 'scriptn.php',
+                    data: formData,
+                    success: function(response) {
+                        // Handle the response from the server
+                        console.log(response);
+                       
+                        $('form')[0].submit();
+                    },
+                    error: function(error) {
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
         <form action="scriptn.php" method="post">
             <label for="searchName">Enter Call Of Duty game's name:</label>
             <input type="text" name="searchName" required>
             <br>
             <input type="submit" value="Search">
         </form>
-
     </div>
+</body>
+</html>
+
+
+        
 
     <!-- Header with Sign In button -->
     <div class="header">
