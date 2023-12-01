@@ -1,5 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>Your Website</title>
+    <style>
+        .cookie-popup {
+            display: <?php echo isset($_COOKIE['cookiesAccepted']) ? 'none' : 'block'; ?>;
+            position: fixed;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f1f1f1;
+            padding: 80px; 
+            border-radius: 15px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px; 
+        }
+    </style>
+</head>
+<body>
+
+<div id="cookie-popup" class="cookie-popup" onclick="this.style.display='none'; acceptCookies();">
+    <p>Welcome to my website</p>
+    <button>Got it!</button>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
