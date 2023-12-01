@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <title>Your Website</title>
+    <title>Menu</title>
     <style>
         .cookie-popup {
             display: <?php echo isset($_COOKIE['cookiesAccepted']) ? 'none' : 'block'; ?>;
