@@ -292,7 +292,6 @@ try {
         // Set a cookie for the last action
         $cookie_name = "last_action";
         $cookie_value = "delete";
-        setcookie($cookie_name, $cookie_value, time() + (800 * 30), "/"); // 800 = 1 day
 
         // Close statement
         $stmt->close();
